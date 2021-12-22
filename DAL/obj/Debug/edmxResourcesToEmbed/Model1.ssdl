@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HomeownerAssociationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BulletinBoard">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Massage" Type="text" Nullable="false" />
+    <Property Name="Note" Type="text" />
+    <Property Name="DataMassage" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CommitteePayments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Apartment" Type="int" Nullable="false" />
+    <Property Name="PaymentFor" Type="varchar" MaxLength="20" />
+    <Property Name="SumPayment" Type="int" Nullable="false" />
+    <Property Name="NumberOfPayments" Type="int" />
+  </EntityType>
+  <EntityType Name="Expenses">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Professional" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SumExpenses" Type="int" Nullable="false" />
+    <Property Name="DataExpenses" Type="datetime" />
+    <Property Name="PaymentMethods" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Landlord">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="AdditionalPhone" Type="varchar" MaxLength="15" />
+    <Property Name="Email" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Malfunction">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Urgency" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HomeownerAssociation.dbo.Malfunctions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Malfunctions">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="NameMalfunctions" />
+    </Key>
+    <Property Name="ID" Type="smallint" Nullable="false" />
+    <Property Name="NameMalfunctions" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HomeownerAssociation.dbo.PaymentMethods' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PaymentMethods">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="NamePaymentMethods" />
+    </Key>
+    <Property Name="ID" Type="smallint" Nullable="false" />
+    <Property Name="NamePaymentMethods" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tenants">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Apartment" Type="int" Nullable="false" />
+    <Property Name="FloorNum" Type="int" />
+    <Property Name="ParkingNum" Type="int" />
+    <Property Name="Phone" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="AdditionalPhone" Type="varchar" MaxLength="15" />
+    <Property Name="Email" Type="varchar" MaxLength="30" />
+    <Property Name="MonthlyBill" Type="float" />
+    <Property Name="HouseCommitteeMember" Type="tinyint" />
+    <Property Name="Rent" Type="tinyint" />
+  </EntityType>
+  <EntityContainer Name="HomeownerAssociationModelStoreContainer">
+    <EntitySet Name="BulletinBoard" EntityType="Self.BulletinBoard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CommitteePayments" EntityType="Self.CommitteePayments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Expenses" EntityType="Self.Expenses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Landlord" EntityType="Self.Landlord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Malfunction" EntityType="Self.Malfunction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tenants" EntityType="Self.Tenants" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Malfunctions" EntityType="Self.Malfunctions" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Malfunctions].[ID] AS [ID], 
+    [Malfunctions].[NameMalfunctions] AS [NameMalfunctions]
+    FROM [dbo].[Malfunctions] AS [Malfunctions]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PaymentMethods" EntityType="Self.PaymentMethods" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PaymentMethods].[ID] AS [ID], 
+    [PaymentMethods].[NamePaymentMethods] AS [NamePaymentMethods]
+    FROM [dbo].[PaymentMethods] AS [PaymentMethods]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

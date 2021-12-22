@@ -1,0 +1,2 @@
+C:\Users\WIN 10\שולחן העבודה\Homeowner Association\Entities\obj\Debug\Entities.csprojAssemblyReference.cache
+C:\Users\WIN 10\שולחן העבודה\Homeowner Association\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache

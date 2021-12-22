@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HomeownerAssociationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BulletinBoard">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Massage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DataMassage" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CommitteePayments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Apartment" Type="Int32" Nullable="false" />
+    <Property Name="PaymentFor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SumPayment" Type="Int32" Nullable="false" />
+    <Property Name="NumberOfPayments" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Expenses">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Category" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Professional" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SumExpenses" Type="Int32" Nullable="false" />
+    <Property Name="DataExpenses" Type="DateTime" Precision="3" />
+    <Property Name="PaymentMethods" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Landlord">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AdditionalPhone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Malfunction">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Category" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Urgency" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Tenants">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apartment" Type="Int32" Nullable="false" />
+    <Property Name="FloorNum" Type="Int32" />
+    <Property Name="ParkingNum" Type="Int32" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AdditionalPhone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="MonthlyBill" Type="Double" />
+    <Property Name="HouseCommitteeMember" Type="Byte" />
+    <Property Name="Rent" Type="Byte" />
+  </EntityType>
+  <EntityType Name="Malfunctions">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="NameMalfunctions" />
+    </Key>
+    <Property Name="ID" Type="Int16" Nullable="false" />
+    <Property Name="NameMalfunctions" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PaymentMethods">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="NamePaymentMethods" />
+    </Key>
+    <Property Name="ID" Type="Int16" Nullable="false" />
+    <Property Name="NamePaymentMethods" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="HomeownerAssociationEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BulletinBoard" EntityType="Self.BulletinBoard" />
+    <EntitySet Name="CommitteePayments" EntityType="Self.CommitteePayments" />
+    <EntitySet Name="Expenses" EntityType="Self.Expenses" />
+    <EntitySet Name="Landlord" EntityType="Self.Landlord" />
+    <EntitySet Name="Malfunction" EntityType="Self.Malfunction" />
+    <EntitySet Name="Tenants" EntityType="Self.Tenants" />
+    <EntitySet Name="Malfunctions" EntityType="Self.Malfunctions" />
+    <EntitySet Name="PaymentMethods" EntityType="Self.PaymentMethods" />
+  </EntityContainer>
+</Schema>

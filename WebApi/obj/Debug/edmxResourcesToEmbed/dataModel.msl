@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HomeownerAssociationModelStoreContainer" CdmEntityContainer="HomeownerAssociationEntities">
+    <EntitySetMapping Name="BulletinBoard">
+      <EntityTypeMapping TypeName="HomeownerAssociationModel.BulletinBoard">
+        <MappingFragment StoreEntitySet="BulletinBoard">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Massage" ColumnName="Massage" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="DataMassage" ColumnName="DataMassage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommitteePayments">
+      <EntityTypeMapping TypeName="HomeownerAssociationModel.CommitteePayments">
+        <MappingFragment StoreEntitySet="CommitteePayments">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Apartment" ColumnName="Apartment" />
+          <ScalarProperty Name="PaymentFor" ColumnName="PaymentFor" />
+          <ScalarProperty Name="SumPayment" ColumnName="SumPayment" />
+          <ScalarProperty Name="NumberOfPayments" ColumnName="NumberOfPayments" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Expenses">
+      <EntityTypeMapping TypeName="HomeownerAssociationModel.Expenses">
+        <MappingFragment StoreEntitySet="Expenses">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Professional" ColumnName="Professional" />
+          <ScalarProperty Name="SumExpenses" ColumnName="SumExpenses" />
+          <ScalarProperty Name="DataExpenses" ColumnName="DataExpenses" />
+          <ScalarProperty Name="PaymentMethods" ColumnName="PaymentMethods" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Landlord">
+      <EntityTypeMapping TypeName="HomeownerAssociationModel.Landlord">
+        <MappingFragment StoreEntitySet="Landlord">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="AdditionalPhone" ColumnName="AdditionalPhone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Malfunction">
+      <EntityTypeMapping TypeName="HomeownerAssociationModel.Malfunction">
+        <MappingFragment StoreEntitySet="Malfunction">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Urgency" ColumnName="Urgency" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tenants">
+      <EntityTypeMapping TypeName="HomeownerAssociationModel.Tenants">
+        <MappingFragment StoreEntitySet="Tenants">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Apartment" ColumnName="Apartment" />
+          <ScalarProperty Name="FloorNum" ColumnName="FloorNum" />
+          <ScalarProperty Name="ParkingNum" ColumnName="ParkingNum" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="AdditionalPhone" ColumnName="AdditionalPhone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MonthlyBill" ColumnName="MonthlyBill" />
+          <ScalarProperty Name="HouseCommitteeMember" ColumnName="HouseCommitteeMember" />
+          <ScalarProperty Name="Rent" ColumnName="Rent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Malfunctions">
+      <EntityTypeMapping TypeName="HomeownerAssociationModel.Malfunctions">
+        <MappingFragment StoreEntitySet="Malfunctions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameMalfunctions" ColumnName="NameMalfunctions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentMethods">
+      <EntityTypeMapping TypeName="HomeownerAssociationModel.PaymentMethods">
+        <MappingFragment StoreEntitySet="PaymentMethods">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NamePaymentMethods" ColumnName="NamePaymentMethods" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
